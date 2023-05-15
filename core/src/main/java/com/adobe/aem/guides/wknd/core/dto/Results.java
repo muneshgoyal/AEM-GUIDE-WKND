@@ -7,12 +7,12 @@ public class Results {
     public String link;
     public ArrayList<String> keywords;
     public ArrayList<String> creator;
-    public Object video_url;
+    public Object videoUrl;
     public String description;
     public String content;
     public String pubDate;
-    public String image_url;
-    public String source_id;
+    public String imageUrl;
+    public String sourceId;
     public ArrayList<String> category;
     public ArrayList<String> country;
     public String language;
@@ -52,12 +52,12 @@ public class Results {
         this.creator = creator;
     }
 
-    public Object getVideo_url() {
-        return video_url;
+    public Object getVideoUrl() {
+        return videoUrl;
     }
 
-    public void setVideo_url(Object video_url) {
-        this.video_url = video_url;
+    public void setVideoUrl(Object videoUrl) {
+        this.videoUrl = videoUrl;
     }
 
     public String getDescription() {
@@ -84,20 +84,20 @@ public class Results {
         this.pubDate = pubDate;
     }
 
-    public String getImage_url() {
-        return image_url;
+    public String getImageUrl() {
+        return imageUrl;
     }
 
-    public void setImage_url(String image_url) {
-        this.image_url = image_url;
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
-    public String getSource_id() {
-        return source_id;
+    public String getSourceId() {
+        return sourceId;
     }
 
-    public void setSource_id(String source_id) {
-        this.source_id = source_id;
+    public void setSourceId(String sourceId) {
+        this.sourceId = sourceId;
     }
 
     public ArrayList<String> getCategory() {

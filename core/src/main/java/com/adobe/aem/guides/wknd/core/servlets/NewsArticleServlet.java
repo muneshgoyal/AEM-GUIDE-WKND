@@ -46,7 +46,7 @@ public class NewsArticleServlet extends SlingAllMethodsServlet {
     @Override
     protected void doGet(final SlingHttpServletRequest req,
             final SlingHttpServletResponse resp) throws ServletException, IOException {
-        LOG.info("Inside goget");
+        LOG.info("Inside doGet");
         resp.setContentType("application/json");
         try {
 
