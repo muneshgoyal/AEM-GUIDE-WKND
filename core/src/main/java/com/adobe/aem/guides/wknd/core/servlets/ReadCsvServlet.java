@@ -1,6 +1,8 @@
 package com.adobe.aem.guides.wknd.core.servlets;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.Servlet;
@@ -34,8 +36,14 @@ public class ReadCsvServlet extends SlingAllMethodsServlet {
             final SlingHttpServletResponse resp) throws ServletException, IOException {
         LOG.info("Inside doGet");
         resp.setContentType("application/json");
+        String path = req.getParameter("path");
+        
+        HashMap<String, ArrayList<String>> data = readCsvFile.readData(path);
+        
+        for (String key : data.keySet()) {
+            resp.getWriter().write("key: " + key + " val" + data.get(key) + "\n");
+            
+        }
 
-        List<String> data = readCsvFile.readData();
-        resp.getWriter().write("DATA" + data);
     }
 }
