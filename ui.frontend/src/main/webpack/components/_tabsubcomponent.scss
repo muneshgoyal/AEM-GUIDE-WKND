@@ -1,0 +1,145 @@
+@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css';
+@import "./../site/variables";
+@import "./../site/mixin";
+
+.cmp-tabsubcomponent {
+    background-color: $background-color;
+    display: flex;
+    flex-direction: row;
+
+    &__rightside {
+
+        &__planaction {
+            width: $width-right;
+
+            &__plantype {
+                text-align: center;
+                display: flex;
+                margin-left: $margin-left-s;
+
+                &-action {
+                    width: $width-s;
+                    border: 1px solid $color-foreground;
+                    padding: $padding-s;
+                }
+
+            }
+
+
+            &__amount {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                &__listitem {
+                    list-style: none;
+                    display: flex;
+                    flex-wrap: wrap;
+                    margin-left: 30px;
+
+                    &-items {
+                        width: $width-m;
+                        margin: 5px 0px;
+
+                        .radiobtn {
+                            border: 4px solid white;
+                            box-shadow: 0 0 0 2px rgb(87, 87, 87);
+                            appearance: none;
+                            border-radius: $width-m;
+                            width: $margin-left-s;
+                            height: $margin-left-s;
+                            vertical-align: text-bottom;
+                            transition: all ease-in 0.1s;
+                        }
+
+                        .radiobtn:checked {
+                            background-color: rgb(75, 77, 75);
+
+                        }
+
+
+                        .radiobtn:checked+label {
+                            font-weight: bold;
+                        }
+
+                    }
+
+                    @include max-screen(md) {
+                        margin-left: 0;
+                    }
+                }
+
+                &-image {
+                    position: relative;
+                    display: none;
+
+                    img {
+                        position: absolute;
+                        top: 30%;
+                        left: 58px;
+                        transform: translateY(-50%);
+                        width: 10px;
+                    }
+
+                    .ctaTextInput {
+                        width: $width-h;
+                        margin-bottom: 20px;
+                        padding: 5px 25px;
+                        border: 1px solid #adacac;
+                        border-radius: 20px;
+                        margin-left: 48px;
+                        box-sizing: border-box;
+                        // padding-left: 25px;
+
+                    }
+
+                }
+
+
+
+
+                .ctaBtnText {
+                    width: $width-h;
+
+                    padding: 7px;
+                    border: none;
+                    border-radius: 20px;
+                    background-color: $color-button;
+                    margin-left: 48px;
+
+                    &.selected-other {
+                        background-color: $color-radio;
+                    }
+
+                    &.change-color {
+                        background-color: $color-button;
+                    }
+                }
+            }
+
+            &__ctatext {
+                padding-left: 25px;
+                box-sizing: border-box;
+                text-align: center;
+                width: 85%;
+                margin-left: 43px;
+
+                img {
+                    width: 65px;
+                    height: 25px;
+                    border-radius: 20px;
+                }
+
+                @include max-screen(md) {
+                    width: 254px;
+                    margin-left: 10px;
+                }
+
+            }
+
+        }
+
+
+    }
+}

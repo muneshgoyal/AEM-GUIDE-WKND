@@ -1,0 +1,82 @@
+@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css';
+@import "./../site/mixin";
+@import "./../site/variables";
+.cmp-journalismcomponent {
+    background-color: #ebe6e6;
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+
+    @include max-screen(md) {
+        flex-direction: column;
+    }
+
+    &__leftside {
+        width: 50%;
+        
+
+        p {
+            line-height: 1;
+            
+            margin-left: $margin-left-h;
+            @include max-screen(md)
+            {
+                margin: 0;
+            }
+        }
+
+        div {
+            color: rgb(49, 114, 63);
+        }
+
+        @include max-screen(md) {
+            width: 100%;
+        }
+    }
+
+    &__rightside {
+        width: 50%;
+
+        .cmp-tabs__tablist {
+            text-align: center;
+            padding-left: 40px;
+
+            .cmp-tabs__tab {
+                width: 17%;
+                font-weight: 700;
+                border: 1px solid #05847c;
+                &:first-child{
+                    border-top-left-radius: 5px;
+                    border-bottom-left-radius: 5px;
+                }
+                &:last-child{
+                    border-top-right-radius: 5px;
+                    border-bottom-right-radius: 5px;
+                }
+
+                &--active {
+                    border-radius: 0px;
+                    color: white;
+                    font-weight: 700;
+                    background-color: #05847c;
+                }
+
+                @include max-screen(md) {
+                    width: 33.33%;
+                }
+            }
+
+            @include max-screen(md) {
+                width: 100%;
+                padding-left: 0;
+            }
+
+        }
+
+        .tabStyle {}
+
+        @include max-screen(md) {
+            width: 100%;
+        }
+    }
+}
