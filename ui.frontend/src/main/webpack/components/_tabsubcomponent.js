@@ -8,9 +8,9 @@ import $ from "jquery";
     };
     function journalism(config) {
         function init(config) {
-            let amount = $('.cmp-tabsubcomponent__rightside__planaction__amount');
-            let listItem = $('.cmp-tabsubcomponent__rightside__planaction__amount__listitem');
-            let inputImage = $('.cmp-tabsubcomponent__rightside__planaction__amount-image');
+            const amount = $('.cmp-tabsubcomponent__rightside__planaction__amount');
+            const listItem = $('.cmp-tabsubcomponent__rightside__planaction__amount__listitem');
+            const inputImage = $('.cmp-tabsubcomponent__rightside__planaction__amount-image');
             config.element.removeAttribute("data-cmp-is");
 
             $('.radiobtn').on('click', function () {
@@ -46,7 +46,7 @@ import $ from "jquery";
                 $(this).on('click', function () {
                     
                     
-                    $('.cmp-tabsubcomponent')[$(this).index()].find('.radiobtn:first').trigger('click');
+                    $($($('.cmp-tabsubcomponent')[$(this).index()]).find('.radiobtn:first')).trigger('click');
                    
                 })
             })
