@@ -1,0 +1,54 @@
+<div data-sly-use.model="com.adobe.aem.guides.wknd.core.models.NearbyModel"
+   data-sly-use.templates="core/wcm/components/commons/v1/templates.html" data-cmp-is="cmp-nearbycomponent">
+   <sly data-sly-test="${!model.isEmpty}">
+
+      <div class="cmp-nearby">
+         <img class="cmp-nearby__background" style="background-image: url(${model.bgImage @ context='unsafe'});" alt="">
+         <div class="cmp-nearby__contents">
+            <div class="cmp-nearby__small-title">
+               ${model.title}
+            </div>
+            <div class="cmp-nearby__main-title">
+               ${model.subtitle}
+            </div>
+            <div class="cmp-nearby__filters">
+               <div class="cmp-nearby__filters-wrapper">
+                  <select name="All Areas" class="cmp-nearby__areas" id="cities">
+
+                  </select>
+                  <span class="cmp-nearby__seperator">|</span>
+                  <input type="text" class="cmp-nearby__areas seperator" placeholder="enter a location" id="location">
+                  <span class="cmp-nearby__seperator">|</span>
+                  <select name="Price Range" class="cmp-nearby__areas" id="prices">
+
+                  </select>
+
+                  <div class="cmp-nearby__button">
+
+                     <div class="search-icon-wrapper"><img
+                           src="https://th.bing.com/th/id/R.5bf668f3da464a969d4c0810ae4b3d98?rik=52UFog1Tk%2fVKSQ&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fimg_238187.png&ehk=TnXjgyS0yO1%2bhupnBFuxiiVYGbJsLlMh3GnBXJ2l8Ag%3d&risl=&pid=ImgRaw&r=0"
+                           alt=""></div>
+                     <a href="" class="cmp-nearby__filter-button" id="searchdata">${model.searchButtonText}</a>
+                  </div>
+               </div>
+            </div>
+            <div class="cmp-nearby__menu-details" data-sly-list.item="${model.quickSearchLinks}">
+               <div class="cmp-nearby__menu-items">
+                  <div class="cmp-nearby__menu-wrapper">
+                     <div class="cmp-nearby__menu-wrapper-contain">
+                        <a class="cmp-nearby__menu-link" href="" data-query="${item.queryparam}">
+                           <img class="cmp-nearby__menu-img" src="${item.diffIcon}" alt=""></a>
+                     </div>
+                     <div class="cmp-nearby__menu-title">${item.linktext}
+                     </div>
+                  </div>
+               </div>
+
+            </div>
+         </div>
+      </div>
+     
+   </sly>
+
+</div>
+<sly data-sly-call="${templates.placeholder @ isEmpty = model.isEmpty}"></sly>

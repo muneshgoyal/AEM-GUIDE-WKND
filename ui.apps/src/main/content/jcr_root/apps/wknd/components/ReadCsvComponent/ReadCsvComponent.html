@@ -1,0 +1,16 @@
+<div data-sly-use.model="com.adobe.aem.guides.wknd.core.models.ReadCsv">
+
+      <div data-sly-list.key="${model.data}">
+        
+            <li>${key}:
+                 <ul data-sly-list.values="${model.data[key]}">
+                       <li>
+                          ${values}
+                       </li>
+                 </ul>
+            </li>
+       
+      </div>
+     
+
+</div>

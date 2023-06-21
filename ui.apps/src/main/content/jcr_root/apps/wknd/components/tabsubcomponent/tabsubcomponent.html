@@ -1,0 +1,45 @@
+ <!-- <div>hello</div> -->
+ <div data-sly-use.model="com.adobe.aem.guides.wknd.core.models.TabSubComponentModel"
+     data-sly-use.templates="core/wcm/components/commons/v1/templates.html" data-cmp-is="cmp-tabsubcomponent"
+     class="cmp-tabsubcomponent">
+     <sly data-sly-test="${!model.isEmpty}">
+         <div class="cmp-tabsubcomponent__rightside">
+             <div class="cmp-tabsubcomponent__rightside__planaction">
+                 <div class="cmp-tabsubcomponent__rightside__planaction__amount"
+                     data-sly-repeat.item="${model.planType}">
+                     <ul class="cmp-tabsubcomponent__rightside__planaction__amount__listitem"
+                         data-sufix="${item.sufixText|| ' '}">
+                         <!-- <li class="cmp-tabsubcomponent__rightside__planaction__amount__listitem-items">
+                             <input class="radiobtn" data-amount="${subitem.amountData}" name="amountdata" type="radio">
+                             ${subitem.amountData}<span data-sly-test="${item.sufixText}">/</span>${item.sufixText}
+                         </li> -->
+                         <li data-sly-repeat.subitem="${item.amount}"
+                             class="cmp-tabsubcomponent__rightside__planaction__amount__listitem-items">
+                             <input class="radiobtn" data-amount="${subitem.amountData}"
+                                 data-sufix="${item.sufixText|| ' '}" name="amountdata" type="radio">
+                             <label for=""> ${subitem.amountData}<span
+                                     data-sly-test="${item.sufixText}"></span>${item.sufixText}</label>
+                         </li>
+                         <li class="cmp-tabsubcomponent__rightside__planaction__amount__listitem-items other">
+                             <input data-amount="" class="radiobtn" name="amountdata" type="radio">
+                             <label for=""> other</label>
+                         </li>
+                     </ul>
+                     <div class="cmp-tabsubcomponent__rightside__planaction__amount-image">
+                        
+                        <img src="https://cdn0.iconfinder.com/data/icons/market-and-economics-19/48/77-512.png" alt="Image">
+                        <input class="ctaTextInput" type="number" placeholder="Other amount">
+                      </div>
+                         
+                  
+                     <button class="ctaBtnText" data-cta-text="${item.ctaText}"> ${item.ctaText} </button>
+                 </div>
+                 <div class="cmp-tabsubcomponent__rightside__planaction__ctatext">
+                     <p>We accept credit card, Apple Pay, and Google Pay. You can also contribute via </p>
+                     <img src="https://cdn.pixabay.com/photo/2015/05/26/09/37/paypal-784404_1280.png" alt="">
+                 </div>
+             </div>
+         </div>
+     </sly>
+ </div>
+ <sly data-sly-call="${templates.placeholder @ isEmpty = model.isEmpty}"></sly>
